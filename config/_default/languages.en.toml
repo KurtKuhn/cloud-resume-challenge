@@ -15,14 +15,17 @@ title = "Blowfish"
 
 [author]
   name = "Kurt Kühn"
-  image = "img/blowfish_logo.png"
+  image = "img/me.jpg"
   headline = "I'm only human who is trying to learn things"
   bio = "A little bit about you"
   links = [
-    { link = "https://link-to-some-website.com/" },
+    { linkedin = "https://linkedin.com/in/kurtkuhn" },
     { github = "https://github.com/kurtkuhn" },
     { email = "mailto:kurtajkuhn@gmail.com" },
-    { linkedin = "https://linkedin.com/in/kurtkuhn" },
+    { link = "https://link-to-some-website.com/" },
+
+    
+
 
     # { amazon = "https://www.amazon.com/hz/wishlist/ls/wishlist-id" },
     # { apple = "https://www.apple.com" },
