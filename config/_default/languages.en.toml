@@ -16,11 +16,14 @@ title = "Blowfish"
 [author]
   name = "Kurt Kühn"
   image = "img/blowfish_logo.png"
-  headline = "I'm only human"
+  headline = "I'm only human who is trying to learn things"
   bio = "A little bit about you"
   links = [
-    { email = "mailto:kurtajkuhn@gmail.com" },
     { link = "https://link-to-some-website.com/" },
+    { github = "https://github.com/kurtkuhn" },
+    { email = "mailto:kurtajkuhn@gmail.com" },
+    { linkedin = "https://linkedin.com/in/kurtkuhn" },
+
     # { amazon = "https://www.amazon.com/hz/wishlist/ls/wishlist-id" },
     # { apple = "https://www.apple.com" },
     # { blogger = "https://username.blogspot.com/" },
@@ -31,7 +34,7 @@ title = "Blowfish"
     # { facebook = "https://facebook.com/username" },
     # { flickr = "https://www.flickr.com/photos/username/" },
     # { foursquare = "https://foursquare.com/username" },
-    { github = "https://github.com/kurtkuhn" },
+
     # { gitlab = "https://gitlab.com/username" },
     # { google = "https://www.google.com/" },
     # { hashnode = "https://username.hashnode.dev" },
@@ -39,7 +42,7 @@ title = "Blowfish"
     # { keybase = "https://keybase.io/username" },
     # { kickstarter = "https://www.kickstarter.com/profile/username" },
     # { lastfm = "https://lastfm.com/user/username" },
-    { linkedin = "https://linkedin.com/in/kurtkuhn" },
+
     # { mastodon = "https://mastodon.instance/@username" },
     # { medium = "https://medium.com/username" },
     # { microsoft = "https://www.microsoft.com/" },

@@ -14,7 +14,7 @@
 identifier = "linkedintop"
 pre = "linkedin"
 url = "https://www.linkedin.com/in/kurtkuhn/"
-weight = 20
+weight = 10
 
 [[main]]
  name = "github"
@@ -26,19 +26,25 @@ weight = 20
  identifier = "resume"
  pre = "link"
  url = ""
- weight = 20
+ weight = 30
 
  [[main]]
  identifier = "email"
  pre = "email"
  url = "mailto:kurtajkuhn@gmail.com/"
- weight = 20
+ weight = 40
 
-[[main]]
- name = "example sub-menu 2"
- parent = "Parent"
- pageRef = "posts"
- weight = 20
+# [[main]]
+#  name = "example sub-menu 2"
+#  parent = "Parent"
+#  pageRef = "posts"
+#  weight = 20
+#
+#  [[main]]
+#   name = "example sub-menu test"
+#   parent = "Parent"
+#   pageRef = "posts"
+#   weight = 20
 
 #[[subnavigation]]
 #  name = "An interesting topic"
