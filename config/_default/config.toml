@@ -3,7 +3,7 @@
 # https://blowfish.page/docs/getting-started/
 
 theme = "blowfish"
-baseURL = "https://kurtkuhn.me/"
+baseURL = "http://kurtkuhn.me.s3-website-us-east-1.amazonaws.com"
 defaultContentLanguage = "en"
 
 # pluralizeListTitles = "true" # hugo function useful for non-english languages, find out more in  https://gohugo.io/getting-started/configuration/#pluralizelisttitles
@@ -63,3 +63,13 @@ buildFuture = false
       name = 'fragmentrefs'
       type = 'fragments'
       weight = 10
+
+[deployment]
+
+    [[deployment.targets]]
+    # An arbitrary name for this target.
+    name = "cloud-resume-blog"
+    # S3; see https://gocloud.dev/howto/blob/#s3
+    # For S3-compatible endpoints, see https://gocloud.dev/howto/blob/#s3-compatible
+    URL = "s3://kurtkuhn.me?region=us-east-1"
+    cloudFrontDistributionID="E16ZWEABXT24DP"
