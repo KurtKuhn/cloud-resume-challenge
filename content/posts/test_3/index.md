@@ -1,7 +1,7 @@
 ---
 title: "Test_3"
 date: 2023-08-31T21:12:22-07:00
-draft: true
+draft: false
 ---
 
 # Audierit nil marem
