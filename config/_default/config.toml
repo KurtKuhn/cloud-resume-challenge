@@ -65,7 +65,6 @@ buildFuture = false
       weight = 10
 
 [deployment]
-
     [[deployment.targets]]
     # An arbitrary name for this target.
     name = "cloud-resume-blog"
