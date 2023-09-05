@@ -1,0 +1,26 @@
+name: cd
+
+on:
+  push:
+    paths:
+      - "assests/**"
+      - "content/**"
+      - "extra/**"
+      - "layouts/**"
+      - "static/**"
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    
+    - name: Clone
+      uses: actions/checkout@v2
+
+    - name: Setup Hugo
+      uses: peaceiris/actions-hugo@v2
+
+    - name: Build with with hugo
+      uses: hugo --minify
+
+    - name: Deploy with Hugo
+      uses: hugo deploy [--target=cloud-resume-blog]
