@@ -1,7 +1,7 @@
 name: cd
 
 env:
-  AWS_REGION: eu-east-1
+  AWS_REGION: us-east-1
 
 on:
   push:
@@ -15,9 +15,10 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    
+
     - name: Clone
       uses: actions/checkout@v2
+
 
     - name: Setup AWS Credentials
       uses: aws-actions/configure-aws-credentials@v3
@@ -29,8 +30,14 @@ jobs:
     - name: Setup Hugo
       uses: peaceiris/actions-hugo@v2
 
+    - name: init for theme
+      run: git init
+
+    - name: Get blowfish
+      run: git submodule add -b main https://github.com/nunocoracao/blowfish.git themes/blowfish 
+
     - name: Build with with hugo
-      uses: hugo --minify
+      run: hugo --minify
 
     - name: Deploy with Hugo
-      uses: hugo deploy [--target=cloud-resume-blog]
+      run: hugo deploy [--target=cloud-resume-blog]
