@@ -1,7 +1,7 @@
 ---
 title: "Test_2"
 date: 2023-08-31T21:12:17-07:00
-draft: true
+draft: false
 ---
 
 # Alieno suppressit terra
