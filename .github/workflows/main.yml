@@ -1,63 +1,47 @@
 name: cd
 
 env:
-  AWS_REGION: us-east-1
-
-# Permission can be added at job level or workflow level
-permissions:
-      id-token: write   # This is required for requesting the JWT
-      contents: read    # This is required for actions/checkout
+  AWS_REGION: eu-east-1
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
-# on:
-#   push:
-#     paths:
-#       - "assests/**"
-#       - "content/**"
-#       - "extra/**"
-#       - "layouts/**"
-#       - "static/**"
+    paths:
+      - "assests/**"
+      - "content/**"
+      - "extra/**"
+      - "layouts/**"
+      - "static/**"
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
-    permissions:
-      id-token: write   # This is required for requesting the JWT
-      contents: read    # This is required for actions/checkout
-
     steps:
+
     - name: Clone
-      uses: actions/checkout@v3
+      uses: actions/checkout@v2
+
+    - name: Install AWS CLI
+      run:  |
+        curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+        unzip awscliv2.zip
+        sudo ./aws/install
 
     - name: Setup AWS Credentials
       uses: aws-actions/configure-aws-credentials@v3
       with:
-        role-to-assume: arn:aws:iam::817215324774:role/GitHub-Actions
-        role-session-name: GitHubAction Session
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ${{ env.AWS_REGION }}
-        profile: profile-iamadmin
 
-    # #Hello from AWS: WhoAmI
-    # - name: Sts GetCallerIdentity
-    #   run: |
-    #     aws sts get-caller-identity
+    #Hello from AWS: WhoAmI
+    - name: Sts GetCallerIdentity
+      run: |
+        aws sts get-caller-identity
 
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
+    - name: Setup Hugo
+      uses: peaceiris/actions-hugo@v2
 
-      - name: init for theme
-        run: git init
+    - name: Build with with hugo
+      uses: hugo
 
-      - name: Get blowfish
-        run: git submodule add -b main https://github.com/nunocoracao/blowfish.git themes/blowfish
-
-      - name: Build with with hugo
-        run: hugo --minify
-
-      - name: Deploy with Hugo
-        run: hugo deploy [--target=cloud-resume-blog]
+    - name: Deploy with Hugo
+      uses: hugo deploy [--target=cloud-resume-blog]
