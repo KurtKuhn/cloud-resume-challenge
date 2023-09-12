@@ -25,5 +25,3 @@ If you have Homebrew installed on Mac, it is quite easy. Simply run the command 
 ```
   brew install hugo
 ```
-
-Test
