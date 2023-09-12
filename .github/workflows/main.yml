@@ -1,7 +1,7 @@
 name: cd
 
 env:
-  AWS_REGION: eu-east-1
+  AWS_REGION: us-east-1
 
 on:
   push:
