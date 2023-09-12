@@ -17,14 +17,14 @@ title = "Blowfish"
   name = "Kurt Kühn"
   image = "img/me.jpg"
   headline = "I'm only human who is trying to learn things"
-  bio = "A little bit about you"
+  # bio = "A little bit about you"
   links = [
     { linkedin = "https://linkedin.com/in/kurtkuhn" },
     { github = "https://github.com/kurtkuhn" },
     { email = "mailto:kurtajkuhn@gmail.com" },
     { link = "https://link-to-some-website.com/" },
 
-    
+
 
 
     # { amazon = "https://www.amazon.com/hz/wishlist/ls/wishlist-id" },

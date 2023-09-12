@@ -21,7 +21,7 @@ defaultBackgroundImage = "img/default_background.jpg" # used as default for back
 # defaultFeaturedImage = "IMAGE.jpg" # used as default for featured images in all articles
 
 # highlightCurrentMenuArea = true
-# smartTOC = true
+smartTOC = true
 # smartTOCHideUnfocusedChildren = true
 
 [header]
@@ -65,7 +65,7 @@ defaultBackgroundImage = "img/default_background.jpg" # used as default for back
   showPagination = true
   invertPagination = false
   showReadingTime = true
-  showTableOfContents = false
+  showTableOfContents = true
   # showRelatedContent = false
   # relatedContentLimit = 3
   showTaxonomies = false
