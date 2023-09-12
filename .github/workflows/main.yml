@@ -41,7 +41,7 @@ jobs:
       uses: peaceiris/actions-hugo@v2
 
     - name: Build with with hugo
-      uses: hugo
+      run: hugo
 
     - name: Deploy with Hugo
-      uses: hugo deploy [--target=cloud-resume-blog]
+      run: hugo deploy [--target=cloud-resume-blog]
