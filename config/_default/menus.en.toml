@@ -17,22 +17,29 @@ url = "https://www.linkedin.com/in/kurtkuhn/"
 weight = 10
 
 [[main]]
- name = "github"
- pageRef = "github"
- url = "https://github.com/kurtkuhn"
- weight = 20
 
- [[main]]
- identifier = "resume"
- pre = "link"
- url = ""
- weight = 30
+identifier = "github"
+pre = "github"
+url = "https://github.com/kurtkuhn"
+weight = 20
 
- [[main]]
- identifier = "email"
- pre = "email"
- url = "mailto:kurtajkuhn@gmail.com/"
- weight = 40
+[[main]]
+identifier = "resume"
+pre = "link"
+url = ""
+weight = 30
+
+[[main]]
+identifier = "email"
+pre = "email"
+url = "mailto:kurtajkuhn@gmail.com/"
+weight = 40
+
+[[main]]
+identifier = "Projects"
+pre = "projects"
+# pageRef = "Projects"
+weight = 50
 
 # [[main]]
 #  name = "example sub-menu 2"
