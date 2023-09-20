@@ -2,3 +2,7 @@
 **/Blowfish_files
 **blowfish.html
 **/public
+variables.tf
+**./terraform/providers
+terraform.tfstate
+terraform.tfstate.backup
