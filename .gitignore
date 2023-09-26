@@ -1,8 +1,21 @@
+#macOSFile
 **/.DS_Store
+
+# Hugo Blowfish theme files
 **/Blowfish_files
 **blowfish.html
 **/public
+
+# Terraform Variable File
 variables.tf
+
+# Local .terraform directories
+**/.terraform/*
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
+
 **./terraform/providers
 terraform.tfstate
 terraform.tfstate.backup
