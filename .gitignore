@@ -16,6 +16,8 @@ variables.tf
 *.tfstate
 *.tfstate.*
 
+# Terraform Providers, State and Lock files
 **./terraform/providers
+.terraform.lock.hcl
 terraform.tfstate
 terraform.tfstate.backup
