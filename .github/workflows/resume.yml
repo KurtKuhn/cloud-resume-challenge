@@ -19,11 +19,12 @@ jobs:
     - name: Sync S3 Bucket
       uses: jakejarvis/s3-sync-action@master
       with:
-        args: --acl public-read --follow-symlinks --delete
+        args: --delete
       env:
         AWS_S3_BUCKET: ${{ secrets.RESUME_BUCKET }}
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        SOURCE_DIR: 'resume'
 
     # - name: Setup AWS Credentials
     #   uses: aws-actions/configure-aws-credentials@v3
