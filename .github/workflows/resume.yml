@@ -1,4 +1,4 @@
-name: Resume
+name: Resume S3 Bucket Sync
 
 env:
   AWS_REGION: us-east-1
@@ -23,15 +23,6 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ${{ env.AWS_REGION }}
 
-    # - name: Sts GetCallerIdentity
-    #   run: |
-    #     aws sts get-caller-identity
-    #
-    # - name: Setup Hugo
-    #   uses: peaceiris/actions-hugo@v2
-    #
-    # - name: Build with with hugo
-    #   run: hugo
-    #
-    # - name: Deploy with Hugo
-    #   run: hugo deploy [--target=cloud-resume-blog]
+   - name: Deploy to AWS S3
+          run: |
+            aws s3 sync . s3://{{ secrets.AWS_SECRET_ACCESS_KEY }} --delete
