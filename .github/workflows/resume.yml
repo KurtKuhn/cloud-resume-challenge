@@ -16,22 +16,22 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
 
-    - name: Sync S3 Bucket
-      uses: jakejarvis/s3-sync-action@master
-      with:
-        args: --delete
-      env:
-        AWS_S3_BUCKET: ${{ secrets.RESUME_BUCKET }}
-        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        SOURCE_DIR: 'resume'
-
-    # - name: Setup AWS Credentials
-    #   uses: aws-actions/configure-aws-credentials@v3
+    # - name: Sync S3 Bucket
+    #   uses: jakejarvis/s3-sync-action@master
     #   with:
-    #     aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-    #     aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-    #     aws-region: ${{ env.AWS_REGION }}
-    #
-    # - name: Deploy static site to S3 bucket
-    #   run: aws s3 sync . s3://${{ secrets.RESUME_BUCKET }} --delete
+    #     args: --delete
+    #   env:
+    #     AWS_S3_BUCKET: ${{ secrets.RESUME_BUCKET }}
+    #     AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+    #     AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+    #     SOURCE_DIR: 'resume'
+
+    - name: Setup AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v3
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ env.AWS_REGION }}
+
+    - name: Deploy static site to S3 bucket
+      run: aws s3 sync ./resume s3://${{ secrets.RESUME_BUCKET }} --delete
