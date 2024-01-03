@@ -1,4 +1,4 @@
-name: cd
+name: Blog
 
 env:
   AWS_REGION: us-east-1
@@ -6,11 +6,11 @@ env:
 on:
   push:
     paths:
-      - "assests/**"
-      - "content/**"
-      - "extra/**"
-      - "layouts/**"
-      - "static/**"
+      - "blog/assests/**"
+      - "blog/acontent/**"
+      - "blog/aextra/**"
+      - "blog/alayouts/**"
+      - "blog/astatic/**"
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -38,7 +38,7 @@ jobs:
     #     role-to-assume: arn:aws:iam::817215324774:role/GitHub-Actions
     #     role-session-name: GitHubAction Session
     #     aws-region: ${{ env.AWS_REGION }}
-        
+
     #Hello from AWS: WhoAmI
     - name: Sts GetCallerIdentity
       run: |
