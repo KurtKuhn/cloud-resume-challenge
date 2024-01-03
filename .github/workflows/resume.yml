@@ -37,4 +37,4 @@ jobs:
       run: aws s3 sync ./resume s3://${{ secrets.RESUME_BUCKET }} --delete
 
     - name: Invalidate clodufront distribution
-      run: aws cloudfront create-invalidation --distribution-id ${{ secrets.RESUME_CLOUDFRONT_DISTRIBUTION_ID }} --paths "./resume/*"
+      run: aws cloudfront create-invalidation --distribution-id ${{ secrets.RESUME_CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
