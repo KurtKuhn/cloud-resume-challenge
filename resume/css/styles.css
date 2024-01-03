@@ -10913,6 +10913,7 @@ p.lead {
     flex-direction: column;
     width: 17rem;
     height: 100vh;
+    color: 355e3b;
   }
   #sideNav .navbar-brand {
     display: flex;
