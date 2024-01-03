@@ -1,15 +1,213 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
-        <meta charset="utf-8">
-        <title>My wonderful website</title>
-        <link rel="stylesheet" href="css/style.css">
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Kurt Kühn Resume</title>
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+
+        <!-- Font Awesome-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="assets/font/font-mfizz.css">
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
     </head>
-    <body>
-        <h1>Welcome to my wonderful website</h1>
-        <p>You will never find another place as cool as this</p>
-        <p>Does the workflow work?!</p>
-        <p>Hopefully!!?!</p>
-        <p>CF Worked!!</p>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">
+                <span class="d-block d-lg-none">Clarence Taylor</span>
+                <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="assets/img/profile.jpg" alt="..." /></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">Education</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#projects">Projects</a></li>
+
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Page Content-->
+        <div class="container-fluid p-0">
+            <!-- About-->
+            <section class="resume-section" id="about">
+                <div class="resume-section-content">
+                    <h1 class="mb-0">
+                        Kurt
+                        <span class="text-primary">Kühn</span>
+                    </h1>
+                    <div class="subheading mb-5">
+                        San Diego, CA ·
+                        <a href="mailto:kurtajkuhn@gmail.com">kurtajkuhn@gmail.com</a>
+                    </div>
+                    <p class="lead mb-5">Experinced SRE  with a strong software engineering foundation and extensive AWS proficiency. Skilled at devising solutions to enchance system reliability, scalability, and performance through CI/CD, IaC implementations and automations.</p>
+                    <div class="social-icons">
+                        <a class="social-icon" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="social-icon" href="#!"><i class="fab fa-github"></i></a>
+                        <a class="social-icon" href="#!"><i class="fab fa-twitter"></i></a>
+                        <a class="social-icon" href="#!"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+            </section>
+
+
+            <hr class="m-0" />
+            <!-- Experience-->
+            <section class="resume-section" id="experience">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">Experience</h2>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">Site Reliability Enginneer</h3>
+                            <div class="subheading mb-3">Trimble, Inc.</div>
+                            <ui id="bullets">
+                              <li>Optimized account creation with Python, Lambda, and DynamoDB, enabling users to create multiple accounts concurrently, saving coworkers 4 hours daily</li>
+                              <li>Collaborated with team leads to develop scripts for managing triggered alerts, resulting in a 10% reduction in the occurrence of repeat events within a single year</li>
+                              <li>Responsible for CI/CD process of production environments using Jenkins and Terraform</li>
+                              <li>Managed and maintained Identity Access Management roles for multiple projects, ensuring compliance and security. Incorporated industry best practices, including least privileged policy</li>
+                              <li>Monitored internal system’s health, identifying and troubleshooting issues or vulnerabilities to ensure continuous functionality</li>
+                            </ui>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">November 2021 - Present</span></div>
+                    </div> <!-- End of one position -->
+              <!-- Additional experience goes here -->
+
+                </div>
+            </section>
+            <hr class="m-0" />
+
+            <!-- Education-->
+            <section class="resume-section" id="education">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">Education</h2>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">Georgia Institute of Technology</h3>
+                            <div class="subheading mb-3">MSc, Computer Science, Computing Systems Specialization
+                              <!-- <div class="subheading mb-2">Computer Science, Computing Systems Specialization</div> -->
+                            </div>
+                        </div>
+                        <div class="flex-shrink-1">
+                          <span class="text-primary">
+                            September 2022 - June 2025
+                            <div class="subheading mb-4">GPA: 4.00</div>
+                          </span>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">Oregon State University</h3>
+                            <div class="subheading mb-3">BSc, Computer Science</div>
+                        </div>
+                        <div class="flex-shrink-0">
+                          <span class="text-primary">
+                            September 2018 - June 2020
+                            <div class="subheading mb-4">GPA: 3.92</div>
+                          </span></div>
+                    </div>
+                </div>
+            </section>
+            <hr class="m-0" />
+
+            <!-- Skills-->
+            <section class="resume-section" id="skills">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">Skills</h2>
+                    <div class="subheading mb-3">Programming Languages & Tools</div>
+                    <ul class="list-inline dev-icons">
+                        <li class="list-inline-item"><i class="fab fa-python"></i></li> <!-- Python -->
+                        <li class="list-inline-item"><i class="fab fa-js-square"></i></li> <!-- Javascript -->
+                        <li class="list-inline-item"><i class="icon-cplusplus"></i></li> <!-- C++ -->
+                        <li class="list-inline-item"><i class="icon-mysql"></i> <!-- MySql -->
+                        <li class="list-inline-item"><i class="fab fa-aws"></i></li> <!-- AWS -->
+                        <li class="list-inline-item"><i class="fab fa-jenkins"></i></li> <!-- Jenkins -->
+                        <!-- <li class="list-inline-item"><i class="fab fa-terraform"></i></li> <!-- Terraform --> -->
+                        <li class="list-inline-item"><i class="fab fa-jira"></i></li> <!-- Jira -->
+                        <li class="list-inline-item"><i class="fab fa-confluence"></i></li> <!-- Confluence -->
+                    </ul>
+                    <div class="subheading mb-3"><b>Languages:</b> Python, Bash, C++, JavaScript, MySQL</div>
+                    <div class="subheading mb-3"><b>DevOps Technology and Tools:</b> WS (ECS, EC2, Lambda, S3, DynamoDB, CloudFormation), GitHub Actions, Jenkins,  Terraform, CI/CD</b></div>
+                    <div class="subheading mb-3"><b>Collaboration Tools</b>: Jira, Confluence</div>
+              </div>
+            </section>
+            <hr class="m-0" />
+            <!-- Projects-->
+            <section class="resume-section" id="projects">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">Projects</h2>
+
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">Cloud Resume Challange and Blog</h3>
+                            <div class="subheading mb-3">AWS Cloudfront, Route 53, Certificate Manager, Terraform, GitHub Actions</div>
+                            <ui id="bullets">
+                              <li>Configured a robust and secure web infrastructure utilizing AWS Route 53 for domain management, Certificate Manager for SSL/TLS certificates, and CloudFront for efficient content delivery and enhanced website performance</li>
+                              <li>Created the CI/CD process using GitHub Actions, allowing automated deployment to ensure rapid and error-free delivery of updates to the site</li>
+                              <li>Implemented AWS CloudWatch to track performance, and logging to capture and analyze relevant logs for troubleshooting</li>
+                            </ui>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">Link Place Holder</span></div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">Full Stack Serverless Chat Web App</h3>
+                            <div class="subheading mb-3">JavaScript, Node.js, AWS Lambda, DynamoDB, Cognito, IAM</div>
+                            <ui id="bullets">
+                              <li>Built a full stack and serverless chat program using AWS services, letting users chat within a web browser</li>
+                              <li>Incorporated AWS Lambda functions to process logic and communication between DynamoDB, Cognito, and S3, allowing the program to be fully scalable</li>
+                              <li>Implemented AWS Cognito for user authentication and JWT for authorization, ensuring secure login and resource protection</li>
+                            </ui>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">Link Place Holder</span></div>
+                    </div> <!-- End of one position -->
+
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">Machine Learning  Musical Genre Song  Classifier</h3>
+                            <div class="subheading mb-3">JavaScript, Python, Flask, TensorFlow, Keras, Heroku</div>
+                            <ui id="bullets">
+                              <li>Developed a convolutional neural network with a team of three that is capable of predicting a song’s genre with 80% accuracy</li>
+                              <li>Implementation of TensorFlow and Keras to train, test, and validate the network, increasing the accuracy of the model by 17%</li>
+                              <li>Created the back end using Python and Flask which allowed the processing of audio files, and error handling</li>
+                            </ui>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">Link Place Holder</span></div>
+                    </div> <!-- End of one position -->
+
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">REST API Airbnb Clone</h3>
+                            <div class="subheading mb-3">Python, Flask, GCP, Postman</div>
+                            <ui id="bullets">
+                              <li>Created a REST API with Python and Flask that manages rental properties on both the client-facing and owner‘s end</li>
+                              <li>Deployed OAuth 2.0 for secure authorization and authentication across all API endpoints, ensuring protection against unauthorized modification of user data</li>
+                              <li>Composed the API documentation and conducted testing by Postman that resulted in full test coverage of each API endpoint</li>
+                            </ui>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">Link Place Holder</span></div>
+                    </div> <!-- End of one position -->
+
+
+
+                    <!-- <p>Apart from being a web developer, I enjoy most of my time being outdoors. In the winter, I am an avid skier and novice ice climber. During the warmer months here in Colorado, I enjoy mountain biking, free climbing, and kayaking.</p>
+                    <p class="mb-0">When forced indoors, I follow a number of sci-fi and fantasy genre movies and television shows, I am an aspiring chef, and I spend a large amount of my free time exploring the latest technology advancements in the front-end web development world.</p> -->
+                </div>
+            </section>
+            <hr class="m-0" />
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
     </body>
 </html>
