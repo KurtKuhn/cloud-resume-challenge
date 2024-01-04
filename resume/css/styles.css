@@ -17,11 +17,19 @@
    width: 100%
  }
 
+#bold_black{
+  font-weight=1250;
+}
+
 #bullets{
    list-style-type: square;
    display: inline-block;
    padding-left: 35px;
  }
+
+  b{
+    color=black;
+  }
 
 :root {
   --bs-blue: #0d6efd;
@@ -55,7 +63,8 @@
   --bs-danger: #dc3545;
   --bs-light: #f8f9fa;
   --bs-dark: #212529;
-  --bs-primary-rgb: 189, 93, 56;
+  --bs-primary-rgb: 53, 76, 70;
+  /* --bs-primary-rgb: 189, 93, 56; */
   --bs-secondary-rgb: 108, 117, 125;
   --bs-success-rgb: 25, 135, 84;
   --bs-info-rgb: 13, 202, 240;
@@ -7679,6 +7688,7 @@ textarea.form-control-lg {
 
 .mb-3 {
   margin-bottom: 1rem !important;
+  color=green;
 }
 
 .mb-4 {
@@ -7690,7 +7700,7 @@ textarea.form-control-lg {
 }
 
 .mb-5 {
-  margin-bottom: 3rem !important;
+  margin-bottom: 1rem !important;
 }
 
 .mb-auto {
@@ -10964,6 +10974,7 @@ p.lead {
 
 .dev-icons {
   font-size: 3rem;
+  margin: 0px;
 }
 
 section.resume-section {
