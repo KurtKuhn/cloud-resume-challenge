@@ -1,12 +1,13 @@
+# BLOG
 data "aws_cloudfront_cache_policy" "cache-optimized" {
   name = "Managed-CachingOptimized"
 }
 
-resource aws_cloudfront_distribution distribution {
+resource "aws_cloudfront_distribution" "blog_distribution" {
 
   origin {
-    domain_name = aws_s3_bucket_website_configuration.site.website_endpoint
-    origin_id   = aws_s3_bucket_website_configuration.site.website_endpoint
+    domain_name = aws_s3_bucket_website_configuration.blog_config.website_endpoint
+    origin_id   = aws_s3_bucket_website_configuration.blog_config.website_endpoint
 
     custom_origin_config {
       http_port              = 80
@@ -21,12 +22,12 @@ resource aws_cloudfront_distribution distribution {
   comment             = ""
   default_root_object = "index.html"
 
-  aliases = ["www.${var.site_domain}"]
+  aliases = ["${var.blog_subdomain}"]
 
   default_cache_behavior {
     allowed_methods  = ["GET", "HEAD"]
     cached_methods   = ["GET", "HEAD"]
-    target_origin_id = aws_s3_bucket_website_configuration.site.website_endpoint
+    target_origin_id = aws_s3_bucket_website_configuration.blog_config.website_endpoint
     compress         = true
 
     viewer_protocol_policy = "redirect-to-https"
@@ -34,7 +35,8 @@ resource aws_cloudfront_distribution distribution {
   }
 
   viewer_certificate {
-    acm_certificate_arn      = resource.aws_acm_certificate.cert.arn
+    # acm_certificate_arn      = module.acm.acm_certificate_arn
+    acm_certificate_arn      = aws_acm_certificate.cert.arn
     ssl_support_method       = "sni-only"
     minimum_protocol_version = "TLSv1.2_2018"
   }
