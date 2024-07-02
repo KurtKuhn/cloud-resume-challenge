@@ -1,4 +1,6 @@
-#APEX
+/*
+APEX
+*/
 resource "aws_route53_zone" "apex_route53_hosted_zone" {
   name         = var.apex_domain
 }
@@ -20,7 +22,9 @@ resource "aws_route53_record" "apex_route53_record" {
   zone_id         = aws_route53_zone.apex_route53_hosted_zone.zone_id
 }
 
-#BLOG
+/*
+BLOG
+*/
 resource "aws_route53_zone" "blog_route53_hosted_zone" {
   name         = var.blog_subdomain
 }
@@ -42,7 +46,7 @@ resource "aws_route53_record" "blog_route53_record" {
   zone_id         = aws_route53_zone.blog_route53_hosted_zone.zone_id
 }
 
-resource aws_route53_record A {
+resource aws_route53_record blog-A {
   zone_id = aws_route53_zone.blog_route53_hosted_zone.zone_id
   name    = "${var.blog_subdomain}"
   type    = "A"
@@ -54,7 +58,7 @@ resource aws_route53_record A {
   }
 }
 
-resource aws_route53_record AAAA {
+resource aws_route53_record blog-AAAA {
   zone_id = aws_route53_zone.blog_route53_hosted_zone.zone_id
   name    = "${var.blog_subdomain}"
   type    = "AAAA"
@@ -72,4 +76,61 @@ resource "aws_route53_record" "blog-ns" {
   type    = "NS"
   ttl     = "172800"
   records = aws_route53_zone.blog_route53_hosted_zone.name_servers
+}
+
+/*
+RESUME
+*/
+
+resource "aws_route53_zone" "resume_route53_hosted_zone" {
+  name         = var.resume_subdomain
+}
+
+resource "aws_route53_record" "resume_route53_record" {
+  for_each = {
+    for dvo in aws_acm_certificate.cert.domain_validation_options : dvo.domain_name => {
+      name   = dvo.resource_record_name
+      record = dvo.resource_record_value
+      type   = dvo.resource_record_type
+    }
+  }
+
+  allow_overwrite = true
+  name            = each.value.name
+  records         = [each.value.record]
+  ttl             = 300
+  type            = each.value.type
+  zone_id         = aws_route53_zone.resume_route53_hosted_zone.zone_id
+}
+
+resource aws_route53_record resume-A {
+  zone_id = aws_route53_zone.resume_route53_hosted_zone.zone_id
+  name    = "${var.resume_subdomain}"
+  type    = "A"
+
+  alias {
+    name                   = aws_cloudfront_distribution.resume_distribution.domain_name
+    zone_id                = aws_cloudfront_distribution.resume_distribution.hosted_zone_id
+    evaluate_target_health = false
+  }
+}
+
+resource aws_route53_record resume-AAAA {
+  zone_id = aws_route53_zone.resume_route53_hosted_zone.zone_id
+  name    = "${var.resume_subdomain}"
+  type    = "AAAA"
+
+  alias {
+    name                   = aws_cloudfront_distribution.resume_distribution.domain_name
+    zone_id                = aws_cloudfront_distribution.resume_distribution.hosted_zone_id
+    evaluate_target_health = false
+  }
+}
+
+resource "aws_route53_record" "resume-ns" {
+  zone_id = aws_route53_zone.apex_route53_hosted_zone.zone_id
+  name    = "resume.kurtkuhn.me"
+  type    = "NS"
+  ttl     = "172800"
+  records = aws_route53_zone.resume_route53_hosted_zone.name_servers
 }
