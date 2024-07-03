@@ -7,6 +7,21 @@
 // Scripts
 // 
 
+// Get subdomain which will passed into API-GW
+// const subdomain = window.location.hostname.split('.').slice(0, -1).join('.');
+// console.log(subdomain); // "my.company"
+
+
+function getSubDomain(){
+    const domain = document.querySelector(".vistorcount")
+    const subdomain = window.location.hostname.split('.').slice(0, -2).join('.');
+    // subdomain = "test"
+    console.log(window.location.hostname); // "my.company"
+    domain.innerHTML = `Hello, I am the subdomain: ${subdomain}`
+    return subdomain
+}
+getSubDomain();
+
 window.addEventListener('DOMContentLoaded', event => {
 
     // Activate Bootstrap scrollspy on the main nav element
