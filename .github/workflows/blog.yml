@@ -4,6 +4,15 @@ env:
   AWS_REGION: us-east-1
 
 on:
+
+  workflow_dispatch:
+    paths:
+      - "blog/assests/**"
+      - "blog/acontent/**"
+      - "blog/aextra/**"
+      - "blog/alayouts/**"
+      - "blog/astatic/**"
+    
   push:
     paths:
       - "blog/assests/**"

@@ -4,6 +4,11 @@ env:
   AWS_REGION: us-east-1
 
 on:
+
+  workflow_dispatch:
+    paths:
+    - "resume/**"
+
   push:
     paths:
       - "resume/**"
