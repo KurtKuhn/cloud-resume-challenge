@@ -29,7 +29,7 @@ async function getSubDomain(){
         count = data['resume_count'];
         console.log('count: ' + count);
         
-        document.getElementById("visitors").innerHTML = count;
+        document.getElementById("visitors").innerHTML = "Your vistor number: " + count;
         console.log(data);
         return data;
     } catch (err) {
