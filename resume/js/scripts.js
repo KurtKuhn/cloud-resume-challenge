@@ -25,10 +25,9 @@ async function getSubDomain(){
         let data = await response.json();
 
         console.log(data);
-        count = data['general_count'];
+        count = data['resume_count'];
         console.log('count: ' + count);
-        count_str = count.toString()
-        // domain.innerHTML  = `Hello, I am the number of vistors:`
+        
         document.getElementById("visitors").innerHTML = count;
         console.log(data);
         return data;
