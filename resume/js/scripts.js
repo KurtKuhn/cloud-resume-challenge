@@ -12,15 +12,44 @@
 // console.log(subdomain); // "my.company"
 
 
-function getSubDomain(){
+async function getSubDomain(){
+    
     const domain = document.querySelector(".vistorcount")
     const subdomain = window.location.hostname.split('.').slice(0, -2).join('.');
-    // subdomain = "test"
-    console.log(window.location.hostname); // "my.company"
-    domain.innerHTML = `Hello, I am the subdomain: ${subdomain}`
-    return subdomain
+    
+    const apigw_url = "https://bgow867901.execute-api.us-east-1.amazonaws.com/default/VisitorCounter"
+    uri = apigw_url  + "?subdomain=" + subdomain
+    
+    try {
+        let response = await fetch(uri, {
+            method: 'GET',
+        });
+        let data = await response.json()
+        count = data['vistors']
+        domain.innerHTML  = 'Hello, I am the number of vistors: ${count}';
+        console.log(data);
+        return data;
+    } catch (err) {
+        console.error(err);
+    }
 }
 getSubDomain();
+
+// async function get_visitors() {
+//     // call post api request function
+//     //await post_visitor();
+//     try {
+//         let response = await fetch('https://cv6b7x3ici.execute-api.eu-west-2.amazonaws.com/default/VisitorCounter', {
+//             method: 'GET',
+//         });
+//         let data = await response.json()
+//         document.getElementById("visitors").innerHTML = data['count'];
+//         console.log(data);
+//         return data;
+//     } catch (err) {
+//         console.error(err);
+//     }
+// }
 
 window.addEventListener('DOMContentLoaded', event => {
 
