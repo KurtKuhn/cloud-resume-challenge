@@ -39,14 +39,14 @@ jobs:
 
     - name: Setup Hugo
       uses: peaceiris/actions-hugo@v3
+      with:
+        hugo-version: '0.119.0'
 
     - name: Hugo Version?
       run: hugo version
 
     - name: Build with with hugo
       run: hugo
-      with:
-        hugo-version: '0.119.0'
-
+      
     - name: Deploy with Hugo
       run: hugo deploy [--target=cloud-resume-blog]
