@@ -7,19 +7,11 @@ on:
 
   workflow_dispatch:
     paths:
-      - "blog/assests/**"
-      - "blog/content/**"
-      - "blog/extra/**"
-      - "blog/layouts/**"
-      - "blog/static/**"
+      - "blog/**"
     
   push:
     paths:
       - "blog/assests/**"
-      - "blog/content/**"
-      - "blog/extra/**"
-      - "blog/layouts/**"
-      - "blog/static/**"
 jobs:
   deploy:
     runs-on: ubuntu-latest
