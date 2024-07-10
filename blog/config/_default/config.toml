@@ -67,7 +67,8 @@ tableOfContents = true
       weight = 10
 
 [deployment]
-  [[deployment.targets]]
-    name = "deploy-blog"
-    URL = "s3://blog.kurtkuhn.me?region=us-east-1"
-    cloudFrontDistributionID="EZ2TK2TGR6ROO"
+
+[[deployment.targets]]
+name = "deploy-blog"
+URL = "s3://blog.kurtkuhn.me?region=us-east-1"
+cloudFrontDistributionID="EZ2TK2TGR6ROO"
