@@ -45,6 +45,8 @@ jobs:
 
     - name: Build with with hugo
       run: hugo
+      with:
+        hugo-version: '0.119.0'
 
     - name: Deploy with Hugo
       run: hugo deploy [--target=cloud-resume-blog]
