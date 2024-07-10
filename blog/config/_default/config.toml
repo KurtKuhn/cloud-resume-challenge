@@ -72,5 +72,5 @@ tableOfContents = true
 name = "cloud-resume-blog"
 # S3; see https://gocloud.dev/howto/blob/#s3
 # For S3-compatible endpoints, see https://gocloud.dev/howto/blob/#s3-compatible
-URL = "s3://kurtkuhn.me?region=us-east-1"
+URL = "s3://blog.kurtkuhn.me?region=us-east-1"
 cloudFrontDistributionID="EZ2TK2TGR6ROO"
