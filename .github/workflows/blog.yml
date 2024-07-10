@@ -49,6 +49,9 @@ jobs:
 
     - name: Hugo Version?
       run: hugo version
+    
+    - name: Run Hugo
+      run: hugo
 
     - name: Build with with hugo
       env:
