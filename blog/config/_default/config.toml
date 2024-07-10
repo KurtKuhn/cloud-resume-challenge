@@ -68,9 +68,6 @@ tableOfContents = true
 
 [deployment]
   [[deployment.targets]]
-  # An arbitrary name for this target.
-  name = "cloud-resume-blog"
-  # S3; see https://gocloud.dev/howto/blob/#s3
-  # For S3-compatible endpoints, see https://gocloud.dev/howto/blob/#s3-compatible
+  name = "deploy-blog"
   URL = "s3://blog.kurtkuhn.me?region=us-east-1"
   cloudFrontDistributionID="EZ2TK2TGR6ROO"
