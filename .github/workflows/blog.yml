@@ -11,7 +11,7 @@ on:
     
   push:
     paths:
-      - "blog/assests/**"
+      - "blog/**"
 jobs:
   deploy:
     runs-on: ubuntu-latest
