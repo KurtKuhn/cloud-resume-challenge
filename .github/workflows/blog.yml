@@ -51,7 +51,10 @@ jobs:
       run: hugo version
 
     - name: Build with with hugo
-      run: hugo --logLevel info
+      env:
+        HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
+        TZ: America/Los_Angeles
+      run: hugo --gc --logLevel info
       
     - name: Deploy with Hugo
       run: hugo deploy [--target=cloud-resume-blog]
