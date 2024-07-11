@@ -4,7 +4,6 @@ env:
   AWS_REGION: us-east-1
 
 on:
-
   workflow_dispatch:
     paths:
       - "blog/**"
@@ -12,6 +11,10 @@ on:
   push:
     paths:
       - "blog/**"
+      
+defaults:
+  run:
+    working-directory: ./blog
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -53,7 +56,6 @@ jobs:
     - name: Build with Hugo
       run: |
         hugo deploy [--target=deploy-blog]
-      working-directory: ./blog
       
     # - name: Hugo Version?
     #   run: hugo version
