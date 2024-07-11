@@ -27,12 +27,6 @@ jobs:
       uses: actions/checkout@v4
       with:
         submodules: recursive
-    
-    # - name: Install AWS CLI
-    #   run:  |
-    #     curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-    #     unzip awscliv2.zip
-    #     sudo ./aws/install
 
     - name: Setup AWS Credentials
       uses: aws-actions/configure-aws-credentials@v4
@@ -40,10 +34,6 @@ jobs:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ${{ env.AWS_REGION }}
-
-    - name: Sts GetCallerIdentity
-      run: |
-        aws sts get-caller-identity
 
     - name: Setup Hugo
       run: |
@@ -61,25 +51,7 @@ jobs:
 
     - name: Build Hugo
       run: hugo --gc --minify 
-      
+
     - name: Deploy with Hugo
       run: |
         hugo deploy [--target=deploy-blog]
-      
-    # - name: Hugo Version?
-    #   run: hugo version
-    
-    # - name: Run Hugo
-    #   run: hugo
-
-    # - name: Build with with hugo
-    #   env:
-    #     HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
-    #     TZ: America/Los_Angeles
-    #   run: hugo --gc --logLevel info
-
-    # - name: Setup Hugo
-    #   uses: peaceiris/actions-hugo@v3
-      
-    # - name: Deploy with Hugo
-    #   run: hugo deploy [--target=deploy-blog]
