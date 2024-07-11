@@ -42,11 +42,21 @@ jobs:
       run: |
         aws sts get-caller-identity
 
-    # - name: Setup Hugo
-    #   run: |
-    #     wget https://github.com/gohugoio/hugo/releases/download/v${{ env.HUGO_VERSION }}/hugo_extended_${{ env.HUGO_VERSION }}_linux-amd64.deb -O hugo_extended_${{ env.HUGO_VERSION }}_linux-amd64.deb
-    #     sudo dpkg -i hugo*.deb
+    - name: Setup Hugo
+      run: |
+        wget https://github.com/gohugoio/hugo/releases/download/v${{ env.HUGO_VERSION }}/hugo_extended_${{ env.HUGO_VERSION }}_linux-amd64.deb -O hugo_extended_${{ env.HUGO_VERSION }}_linux-amd64.deb
+        sudo dpkg -i hugo*.deb
 
+    - name: Install Dart Sass
+      run: sudo snap install dart-sass
+
+    - name: Build with Hugo
+      env:
+        HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
+        TZ: America/Los_Angeles
+      run: |
+        hugo deploy [--target=deploy-blog]
+      
     # - name: Hugo Version?
     #   run: hugo version
     
@@ -59,8 +69,8 @@ jobs:
     #     TZ: America/Los_Angeles
     #   run: hugo --gc --logLevel info
 
-    - name: Setup Hugo
-      uses: peaceiris/actions-hugo@v2
+    # - name: Setup Hugo
+    #   uses: peaceiris/actions-hugo@v3
       
-    - name: Deploy with Hugo
-      run: hugo deploy [--target=deploy-blog]
+    # - name: Deploy with Hugo
+    #   run: hugo deploy [--target=deploy-blog]
