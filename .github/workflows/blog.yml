@@ -55,11 +55,14 @@ jobs:
 
     - name: lsl
       run: ls -l
-      
+
     - name: Change directory
       run: cd  ${{ inputs.working_directory }}
 
-    - name: Build with Hugo
+    - name: Build Hugo
+      run: hugo --gc --minify 
+      
+    - name: Deploy with Hugo
       run: |
         hugo deploy [--target=deploy-blog]
       
