@@ -1,0 +1,25 @@
+<html>
+    <!-- <script src="../assets/js/apigw-script.js"></script> -->
+    <script type="text/javascript">
+
+         window.onload = async function getSubDomain(){
+    
+            try {
+
+                const subdomain = window.location.hostname.split('.').slice(0, -2).join('.');
+                const apigw_url = "https://bgow867901.execute-api.us-east-1.amazonaws.com/default/VisitorCounter"
+                
+                uri = apigw_url  + "?subdomain=" + subdomain;
+                console.log(subdomain);
+                console.log(uri);
+                
+                let response = await fetch(uri, {method: 'GET',
+                });
+                let data = await response.json();
+                return data;
+            } catch (err) {
+                console.error(err);
+            }
+        }
+    </script>
+</html>
