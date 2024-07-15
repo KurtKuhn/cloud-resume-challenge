@@ -8,10 +8,7 @@
 
                 const subdomain = window.location.hostname.split('.').slice(0, -2).join('.');
                 const apigw_url = "https://bgow867901.execute-api.us-east-1.amazonaws.com/default/VisitorCounter"
-                
                 uri = apigw_url  + "?subdomain=" + subdomain;
-                console.log(subdomain);
-                console.log(uri);
                 
                 let response = await fetch(uri, {method: 'GET',
                 });
