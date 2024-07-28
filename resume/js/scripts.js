@@ -3,19 +3,14 @@
 * Copyright 2013-2023 Start Bootstrap
 * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-resume/blob/master/LICENSE)
 */
-//
+
 // Scripts
-// 
 
 // Get subdomain which will passed into API-GW
-// const subdomain = window.location.hostname.split('.').slice(0, -1).join('.');
-// console.log(subdomain); // "my.company"
-
-
-window.onload = async function getSubDomain(){
+ window.onload = async function getSubDomain(){
     
     try {
-        // const domain = document.querySelector(".vistorcount")
+        
         const subdomain = window.location.hostname.split('.').slice(0, -2).join('.');
         const apigw_url = "https://bgow867901.execute-api.us-east-1.amazonaws.com/default/VisitorCounter"
         uri = apigw_url  + "?subdomain=" + subdomain;
@@ -24,35 +19,12 @@ window.onload = async function getSubDomain(){
         });
         let data = await response.json();
 
-        // console.log(data);
-        // console.log(data);
-        // count = data['resume_count'];
-        // console.log('count: ' + count);
-        
-        // document.getElementById("visitors").innerHTML = "Your vistor number: " + count;
-        // console.log(data);
         return data;
     } catch (err) {
         console.error(err);
     }
 }
 getSubDomain();
-
-// async function get_visitors() {
-//     // call post api request function
-//     //await post_visitor();
-//     try {
-//         let response = await fetch('https://cv6b7x3ici.execute-api.eu-west-2.amazonaws.com/default/VisitorCounter', {
-//             method: 'GET',
-//         });
-//         let data = await response.json()
-//         document.getElementById("visitors").innerHTML = data['count'];
-//         console.log(data);
-//         return data;
-//     } catch (err) {
-//         console.error(err);
-//     }
-// }
 
 window.addEventListener('DOMContentLoaded', event => {
 

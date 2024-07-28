@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
     paths:
       - "blog/**"
-    
+
   push:
     paths:
       - "blog/**"
@@ -31,15 +31,15 @@ jobs:
     - name: Setup AWS Credentials
       uses: aws-actions/configure-aws-credentials@v4
       with:
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        role-to-assume: arn:aws:iam::${{ secrets.CLOUD_RESUME_AWS_ACCOUNT_ID }}:role/cloud-resume-github-actions
+        role-session-name: github-actions-test-role-sesssion
         aws-region: ${{ env.AWS_REGION }}
 
     - name: Setup Hugo
       run: |
         wget https://github.com/gohugoio/hugo/releases/download/v${{ env.HUGO_VERSION }}/hugo_extended_${{ env.HUGO_VERSION }}_linux-amd64.deb -O hugo_extended_${{ env.HUGO_VERSION }}_linux-amd64.deb
         sudo dpkg -i hugo*.deb
-      
+
     - name: Display current directory
       run: echo ${GITHUB_WORKSPACE}
 
@@ -50,7 +50,7 @@ jobs:
       run: cd  ${{ inputs.working_directory }}
 
     - name: Build Hugo
-      run: hugo --gc --minify 
+      run: hugo --gc --minify
 
     - name: Deploy with Hugo
       run: |
