@@ -1,4 +1,4 @@
-name: Resume -- Build and Deply
+name: Resume - Build and Deploy
 
 env:
   AWS_REGION: us-east-1
