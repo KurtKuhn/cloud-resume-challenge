@@ -1,4 +1,4 @@
-name: Blog -- Build and Deply
+name: Blog - Build and Deploy
 
 env:
   AWS_REGION: us-east-1
