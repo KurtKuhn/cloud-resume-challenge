@@ -1,10 +1,15 @@
-name: Resume S3 Bucket Sync
+name: Resume -- Build and Deply
 
 env:
   AWS_REGION: us-east-1
 
-on:
+# Needed for Github Actions:
+# https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/configuring-openid-connect-in-amazon-web-services
+permissions:
+  id-token: write
+  contents: read
 
+on:
   workflow_dispatch:
     paths:
     - "resume/**"
@@ -16,8 +21,8 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    steps:
 
+    steps:
     - name: Checkout
       uses: actions/checkout@v4
 

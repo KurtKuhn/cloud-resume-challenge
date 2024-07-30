@@ -1,7 +1,10 @@
-name: Blog
+name: Blog -- Build and Deply
 
 env:
   AWS_REGION: us-east-1
+
+# Needed for Github Actions:
+# https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/configuring-openid-connect-in-amazon-web-services
 
 permissions:
   id-token: write   # This is required for requesting the JWT
@@ -23,11 +26,10 @@ defaults:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     env:
       HUGO_VERSION: 0.128.2
-    steps:
 
+    steps:
     - name: Clone
       uses: actions/checkout@v4
       with:
